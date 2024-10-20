@@ -1,37 +1,72 @@
-# Audible Product Web Scraper
+# Selenium Projects
 
-This project is a Selenium-based web scraper that extracts product details (Title, Author, and Runtime) from Audible's search page and exports the data into a CSV file.
+This repository contains several projects using Selenium for web automation and web scraping tasks. Each project is contained in a separate folder for easy organization and management.
+
+## Projects
+
+### 1. Web Scraping (Folder: `webscraping`)
+
+This project uses Selenium to scrape product information from [Audible's search page](https://www.audible.com/search). The script collects the following details for each product:
+
+- **Title**
+- **Author**
+- **Runtime**
+
+The scraped data is stored in a CSV file named `audible_products.csv`.
+
+#### How to run the script:
+
+1. Install the required packages:
+    ```bash
+    pip install selenium pandas
+    ```
+
+2. Download the Chrome WebDriver and update the path in the script accordingly.
+
+3. Run the script using the following command:
+    ```bash
+    python webscraping/webscraping.py
+    ```
+
+The script will save the scraped data to `audible_products.csv`.
+
+### 2. Date Picker Automation (Folder: `datepicker`)
+
+This project automates interactions with a date picker element on a web page. It uses Selenium to open a webpage and interact with the date picker, selecting specific dates.
+
+#### How to run the script:
+
+1. Install the required packages:
+    ```bash
+    pip install selenium
+    ```
+
+2. Download the Chrome WebDriver and update the path in the script accordingly.
+
+3. Run the script using the following command:
+    ```bash
+    python datepicker/datepicker.py
+    ```
+
+The script will open the webpage and automate date selection using the date picker.
 
 ## Requirements
 
 - Python 3.x
 - Selenium
-- Chrome WebDriver
-- pandas
+- Chrome WebDriver (or other browser driver based on the browser you use)
+- Pandas (for data handling in the web scraping project)
 
-## Installation
+## Setting up the environment
 
-1. **Install Python**  
-   Make sure you have Python installed. You can download it from [Python's official site](https://www.python.org/).
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Vishvaas02/selenium_projects.git
+    ```
 
-2. **Install Dependencies**  
-   Install the necessary Python libraries by running the following commands:
+2. Install the necessary Python packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-   ```bash
-   pip install selenium
-   pip install pandas
 
-## How It Works
-
-The script uses Selenium to launch a Chrome browser instance.
-It navigates to the Audible search page.
-Using XPath, the script identifies product elements (Title, Author, and Runtime) from the page.
-The details are stored in lists and then converted to a pandas DataFrame.
-The DataFrame is exported to a CSV file named audible_products.csv.
-
-## Output
-After running the script, a CSV file named audible_products.csv will be created in your project directory. It will contain the following columns:
-
-Title: The title of the Audible product.
-Author: The author of the Audible product.
-Runtime: The duration of the Audible product.
